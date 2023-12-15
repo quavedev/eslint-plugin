@@ -1,0 +1,65 @@
+{
+  "name": "@quave/eslint-plugin-quave",
+  "version": "1.0.0",
+  "description": "Quave linting rules for ESLint",
+  "main": "lib/index.js",
+  "scripts": {
+    "coverage:check": "nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "coverage:report": "nyc report",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint ./",
+    "pretest": "npm run lint",
+    "rule": "node scripts/new-rule.js",
+    "test": "npm run unit-test && npm run coverage:report && npm run coverage:check",
+    "unit-test": "nyc --reporter=lcov mocha tests --recursive",
+    "unit-test:watch": "npm run unit-test -s -- --watch -g no-sync-mongo-methods-on-server"
+  },
+  "files": [
+    "README.md",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quavedev/eslint-plugin.git"
+  },
+  "dependencies": {
+    "invariant": "2.2.4"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.9",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "coveralls": "^3.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.55.0",
+    "meteor-babel": "^7.10.7",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "readline-sync": "^1.4.10",
+    "recast": "^0.23.4",
+    "reify": "^0.20.12",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3.7.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "meteor"
+  ],
+  "config": {
+    "ghooks": {
+      "commit-msg": "node_modules/.bin/validate-commit-msg"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog/"
+    }
+  },
+  "license": "MIT",
+  "contributors": []
+}

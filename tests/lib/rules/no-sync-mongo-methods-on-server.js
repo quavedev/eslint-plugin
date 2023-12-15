@@ -10,10 +10,33 @@ const rule = require('../../../lib/rules/no-sync-mongo-methods-on-server/no-sync
 
 const ruleTester = new RuleTester();
 
+// TODO makes the tests compatible with const and await
+// TODO increase coverage to get back to use all as 100 in the runner
 ruleTester.run('no-sync-mongo-methods-on-server', rule, {
   only: true,
   valid: [
     { code: 'TestCollection.findOneAsync()' },
+    {
+      code: `
+      var modulesCursor = ModulesCollection.find();
+      // missing await due to the TODO above
+      modulesCursor.mapAsync(function(module) {return module._id; });
+      `,
+    },
+    {
+      code: `
+      var modulesCursor = ModulesCollection.find();
+      // missing await due to the TODO above
+      modulesCursor.forEachAsync(function(module) { console.log(module._id); });
+      `,
+    },
+    {
+      code: `
+      var modulesCursor = ModulesCollection.find();
+      // missing await due to the TODO above
+      modulesCursor.fetchAsync();
+      `,
+    },
   ],
 
   invalid: [
@@ -21,6 +44,33 @@ ruleTester.run('no-sync-mongo-methods-on-server', rule, {
       code: 'TestCollection.findOne()',
       errors: [
         { message: 'Should use Meteor async calls use "findOneAsync" instead of "findOne"', type: 'CallExpression' },
+      ],
+    },
+    {
+      code: `
+      var modulesCursor = ModulesCollection.find();
+      var modulesIds = modulesCursor.map(function(module) {return module._id; });
+      `,
+      errors: [
+        { message: 'Should use Meteor async calls use "mapAsync" instead of "map"', type: 'CallExpression' },
+      ],
+    },
+    {
+      code: `
+      var modulesCursor = ModulesCollection.find();
+      var modulesIds = modulesCursor.forEach(function(module) { console.log(module._id); });
+      `,
+      errors: [
+        { message: 'Should use Meteor async calls use "forEachAsync" instead of "forEach"', type: 'CallExpression' },
+      ],
+    },
+    {
+      code: `
+      var modulesCursor = ModulesCollection.find();
+      var modules = modulesCursor.fetch();
+      `,
+      errors: [
+        { message: 'Should use Meteor async calls use "fetchAsync" instead of "fetch"', type: 'CallExpression' },
       ],
     },
   ],

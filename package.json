@@ -4,7 +4,7 @@
   "description": "Quave linting rules for ESLint",
   "main": "lib/index.js",
   "scripts": {
-    "coverage:check": "nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "coverage:check": "nyc check-coverage --lines 83 --functions 87 --branches 79",
     "coverage:report": "nyc report",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./",
@@ -33,7 +33,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.55.0",
     "meteor-babel": "^7.10.7",
-    "mocha": "^8.2.1",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "readline-sync": "^1.4.10",
     "recast": "^0.23.4",

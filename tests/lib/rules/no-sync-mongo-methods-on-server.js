@@ -8,7 +8,11 @@
 const { RuleTester } = require('eslint');
 const rule = require('../../../lib/rules/no-sync-mongo-methods-on-server/no-sync-mongo-methods-on-server');
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 2015,
+  },
+});
 
 // TODO makes the tests compatible with const and await
 // TODO increase coverage to get back to use all as 100 in the runner
@@ -35,6 +39,12 @@ ruleTester.run('no-sync-mongo-methods-on-server', rule, {
       var modulesCursor = ModulesCollection.find();
       // missing await due to the TODO above
       modulesCursor.fetchAsync();
+      `,
+    },
+    {
+      code: `
+      var modules = [].filter(() => {});
+      modules.fetch();
       `,
     },
   ],

@@ -6,7 +6,7 @@
  */
 
 const { RuleTester } = require('eslint');
-const rule = require('../../../lib/rules/no-sync-mongo-methods-on-server/no-sync-mongo-methods-on-server');
+const rule = require('../../../lib/rules/no-sync-mongo-methods-on-server');
 
 const ruleTester = new RuleTester({
   parserOptions: {

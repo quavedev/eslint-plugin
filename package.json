@@ -1,5 +1,5 @@
 {
-  "name": "@quave/eslint-plugin-quave",
+  "name": "@quave/eslint-plugin-meteor-quave",
   "version": "1.0.0",
   "description": "Quave linting rules for ESLint",
   "main": "lib/index.js",

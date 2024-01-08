@@ -1,11 +1,11 @@
-# @quave/eslint-config-quave
+# @quave/eslint-plugin-meteor-quave
 
 [![npm](https://badge.fury.io/js/%40quave%2Feslint-plugin-quave.svg)](https://www.npmjs.com/package/@quave/eslint-plugin-quave)
 
-`@quave/eslint-plugin-quave` is a plugin for eslint to ensure Javascript and Meteor standards.
+`@quave/eslint-plugin-meteor-quave` is a plugin for eslint to ensure Javascript and Meteor standards.
 
 ## Why
-We believe applications should be organized and checked before every commit.
+This plugin will help you with your Meteor 3.0 migration.
 
 ## Installation
 
@@ -13,7 +13,7 @@ We recommend you to use this plugin via [quave-eslint-config](https://github.com
 
 Install the npm dependency
 ```sh
-npm i -D @quave/eslint-plugin-quave
+npm i -D @quave/eslint-plugin-meteor-quave
 ```
 
 ### License

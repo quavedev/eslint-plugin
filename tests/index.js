@@ -20,7 +20,7 @@ describe('configurations', () => {
   ruleNames.forEach((ruleName) => {
     it(`should have a recommended configuration for ${ruleName}`, () => {
       assert(
-        {}.hasOwnProperty.call(configs.recommended.rules, `meteor/${ruleName}`)
+        {}.hasOwnProperty.call(configs.recommended.rules, `@quave/meteor-quave/${ruleName}`)
       );
     });
   });

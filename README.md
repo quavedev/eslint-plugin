@@ -1,6 +1,6 @@
 # @quave/eslint-plugin-meteor-quave
 
-[![npm](https://badge.fury.io/js/%40quave%2Feslint-plugin-quave.svg)](https://www.npmjs.com/package/@quave/eslint-plugin-quave)
+[![npm version](https://badge.fury.io/js/@quave%2Feslint-plugin-meteor-quave.svg)](https://badge.fury.io/js/@quave%2Feslint-plugin-meteor-quave)
 
 `@quave/eslint-plugin-meteor-quave` is a plugin for eslint to ensure Javascript and Meteor standards.
 

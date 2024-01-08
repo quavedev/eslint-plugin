@@ -23,9 +23,7 @@
     "url": "https://github.com/quavedev/eslint-plugin.git"
   },
   "dependencies": {
-    "invariant": "2.2.4"
-  },
-  "devDependencies": {
+    "invariant": "^2.2.4",
     "@types/eslint": "^8.44.9",
     "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^5.0.0",

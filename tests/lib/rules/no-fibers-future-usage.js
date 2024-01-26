@@ -23,6 +23,7 @@ ruleTester.run('no-fibers-future-usage', rule, {
     { code: 'const aa = new Test()' },
     { code: 'Testing(function() {})' },
     { code: 'User.current' },
+    { code: "import isFuture from 'date-fns/isFuture'" }
   ],
 
   invalid: [

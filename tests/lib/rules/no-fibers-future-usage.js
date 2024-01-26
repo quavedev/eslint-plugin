@@ -34,6 +34,12 @@ ruleTester.run('no-fibers-future-usage', rule, {
       ],
     },
     {
+      code: 'import Fibers from "fibers"',
+      errors: [
+        { message: 'Invalid import/require of Fibers/Future', type: 'ImportDeclaration' },
+      ],
+    },
+    {
       code: 'require("fibers/future")',
       errors: [
         { message: 'Invalid import/require of Fibers/Future', type: 'CallExpression' },

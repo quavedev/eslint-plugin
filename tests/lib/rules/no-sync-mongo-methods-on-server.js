@@ -20,6 +20,7 @@ ruleTester.run('no-sync-mongo-methods-on-server', rule, {
   only: true,
   valid: [
     { code: 'TestCollection.findOneAsync()' },
+    { code: 'UserAccess.after.insert((userId, doc) => {})' },
     {
       code: `
       var modulesCursor = ModulesCollection.find();

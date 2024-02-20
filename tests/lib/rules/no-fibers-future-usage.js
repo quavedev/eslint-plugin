@@ -23,11 +23,18 @@ ruleTester.run('no-fibers-future-usage', rule, {
     { code: 'const aa = new Test()' },
     { code: 'Testing(function() {})' },
     { code: 'User.current' },
+    { code: "import isFuture from 'date-fns/isFuture'" }
   ],
 
   invalid: [
     {
       code: 'import Future from "fibers/future"',
+      errors: [
+        { message: 'Invalid import/require of Fibers/Future', type: 'ImportDeclaration' },
+      ],
+    },
+    {
+      code: 'import Fibers from "fibers"',
       errors: [
         { message: 'Invalid import/require of Fibers/Future', type: 'ImportDeclaration' },
       ],

@@ -12,7 +12,7 @@
     "rule": "node scripts/new-rule.js",
     "test": "npm run unit-test && npm run coverage:report && npm run coverage:check",
     "unit-test": "nyc --reporter=lcov mocha tests --recursive",
-    "unit-test:watch": "npm run unit-test -s -- --watch -g no-sync-mongo-methods-on-server"
+    "unit-test:watch": "npm run unit-test -s -- --watch"
   },
   "files": [
     "README.md",

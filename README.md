@@ -16,6 +16,20 @@ Install the npm dependency
 npm i -D @quave/eslint-plugin-meteor-quave
 ```
 
-### License
+## Debug
+
+You can debug by providing the `METEOR_ESLINT_PLUGIN_DEBUG` env var as `1` for example, so you will see more logs.
+
+Run your eslint task like: `METEOR_ESLINT_PLUGIN_DEBUG=1 eslint .`
+
+## Options
+
+- Env var `METEOR_ESLINT_PLUGIN_EXPIRES_CACHE_IN_SECONDS`: default is `5`. You can customize the cache expiration time in seconds.
+
+## Changelog
+
+[CHANGELOG](./CHANGELOG.md)
+
+## License
 
 MIT

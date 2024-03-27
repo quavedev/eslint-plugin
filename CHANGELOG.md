@@ -11,3 +11,10 @@
 - Adds more debug statements to be logged when using `METEOR_ESLINT_PLUGIN_DEBUG` env var.
 - Adds an option to expires the cache after an amount of seconds, by default its 5. Env var `METEOR_ESLINT_PLUGIN_EXPIRES_CACHE_IN_SECONDS`
 
+## 1.4.1
+
+> This version was not released but the fix is included into 1.4.2
+
+### Bug fixes
+
+- Issue linting collection hooks [#6](https://github.com/quavedev/eslint-plugin/pull/6)

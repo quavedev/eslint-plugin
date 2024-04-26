@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.5.0 - 2024-04-26
+
+### Bug fixes
+
+- Fix error when babel config is not found by returning an empty array.
+- Add guard to `auditArgumentChecks` since `node` could be empty.
+
+### Changes
+
+- Add support to `TS` and `TSX` files by `pre-compiling` it with the `typescript` compiler.
+
 ## 1.4.2 - 2024-03-22
 
 ### Bug fixes

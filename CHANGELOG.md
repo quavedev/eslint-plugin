@@ -10,6 +10,7 @@
 ### Changes
 
 - Add support to `TS` and `TSX` files by `pre-compiling` it with the `typescript` compiler.
+- You can ignore the cache from the `.eslint-meteor-file` by passing `METEOR_ESLINT_PLUGIN_IGNORE_CACHE` as an environment variable.
 
 ## 1.4.2 - 2024-03-22
 

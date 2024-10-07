@@ -24,19 +24,21 @@
   },
   "dependencies": {
     "invariant": "^2.2.4",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "meteor-babel": "^7.10.7",
+    "recast": "^0.23.4",
+    "reify": "^0.20.12",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
     "@types/eslint": "^8.44.9",
     "babel-eslint": "^10.1.0",
-    "babel-plugin-module-resolver": "^5.0.0",
     "coveralls": "^3.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.55.0",
-    "meteor-babel": "^7.10.7",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "readline-sync": "^1.4.10",
-    "recast": "^0.23.4",
-    "reify": "^0.20.12",
-    "typescript": "^5.5.4",
     "validate-commit-msg": "^2.14.0"
   },
   "peerDependencies": {

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.1 and 1.5.2 - 2024-10-15
+
+### Bug fixes
+
+- Fix issue where eager loaded files were not being linted when not using meteor main modules.
+
 ## 1.5.0 - 2024-04-26
 
 ### Bug fixes

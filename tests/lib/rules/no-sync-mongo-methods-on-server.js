@@ -48,6 +48,13 @@ ruleTester.run('no-sync-mongo-methods-on-server', rule, {
       modules.fetch();
       `,
     },
+    {
+      code: `
+      crypto
+        .createHmac('sha256', secretIntercomKey)
+        .update(userId);
+      `,
+    },
   ],
 
   invalid: [

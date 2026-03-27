@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.3 - 2026-03-27
+
+### Bug fixes
+
+- Fix non-deterministic warning counts caused by two related bugs in the Walker:
+  1. The module-level `handledFiles` Set persisted across Walker instances, so when the file cache expired mid-run, re-walking produced an empty file list. Moved `handledFiles` into the Walker instance.
+  2. `shouldSkip()` created a new Walker on every call and depended solely on the disk cache, which could expire mid-run. Added an in-memory cache (`inMemoryCache` Map) that persists for the entire ESLint process, so `shouldSkip()` always sees the complete file list regardless of disk cache TTL.
+
 ## 1.5.2 - 2024-10-15
 
 ### Bug fixes
